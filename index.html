@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Engine Builder LLC develops focused, practical software for everyday life.">
+    <meta name="theme-color" content="#24443a">
+    <title>Engine Builder LLC | Practical software, thoughtfully made</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Engine Builder LLC home">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span>Engine Builder LLC</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow">Independent software company</div>
+        <h1 id="hero-title">Practical software,<br>thoughtfully made.</h1>
+        <p class="hero-copy">Engine Builder LLC creates focused digital tools that help people make everyday decisions with more confidence and less friction.</p>
+        <a class="button" href="#products">Explore our work <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section id="about" class="section two-column" aria-labelledby="about-title">
+        <div>
+          <p class="section-label">About Engine Builder</p>
+          <h2 id="about-title">Small details make useful products.</h2>
+        </div>
+        <div class="body-copy">
+          <p>Engine Builder LLC is a United States limited liability company. We build consumer software around real routines—not around more screens, setup, or busywork.</p>
+          <p>Our approach is simple: begin with a clear problem, make the next action easy, and give people understandable control over their information.</p>
+        </div>
+      </section>
+
+      <section id="products" class="section product-section" aria-labelledby="products-title">
+        <div class="section-heading">
+          <p class="section-label">Our first product</p>
+          <h2 id="products-title">Meet TossLess.</h2>
+        </div>
+        <article class="product-card">
+          <div class="product-card-content">
+            <span class="product-icon" aria-hidden="true">✦</span>
+            <p class="product-kicker">Kitchen management, rethought</p>
+            <h3>Use what you have before it goes bad.</h3>
+            <p>TossLess helps home cooks keep track of groceries, choose what to use, and make the next shopping trip clearer. It is being developed for iPhone.</p>
+          </div>
+          <div class="product-details" aria-label="TossLess capabilities">
+            <div>
+              <span class="detail-number">01</span>
+              <p><strong>Capture groceries simply</strong> with options such as scanning, photos, receipts, pasted text, or manual entry.</p>
+            </div>
+            <div>
+              <span class="detail-number">02</span>
+              <p><strong>See what needs attention</strong> with a kitchen inventory that keeps quantities and freshness estimates visible.</p>
+            </div>
+            <div>
+              <span class="detail-number">03</span>
+              <p><strong>Turn ingredients into dinner</strong> with recipe ideas based on selected food and household preferences.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section principles" aria-labelledby="principles-title">
+        <div class="section-heading">
+          <p class="section-label">How we work</p>
+          <h2 id="principles-title">Built around the person using it.</h2>
+        </div>
+        <div class="principle-grid">
+          <article>
+            <h3>Useful by default</h3>
+            <p>We aim to reduce the work required to get to a useful result.</p>
+          </article>
+          <article>
+            <h3>Clear by design</h3>
+            <p>People should understand what a product is doing and what happens next.</p>
+          </article>
+          <article>
+            <h3>Respectful of data</h3>
+            <p>We design for thoughtful, limited handling of the information people entrust to us.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2 id="contact-title">Let’s stay in touch.</h2>
+        </div>
+        <div>
+          <p>For company or product inquiries, email us at:</p>
+          <a class="email-link" href="mailto:dustin@enginebuilderllc.com">dustin@enginebuilderllc.com</a>
+          <p class="contact-note">Please do not send passwords, account information, or other sensitive information by email.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Engine Builder LLC. All rights reserved.</span>
+      <div>
+        <a href="privacy.html">Website Privacy</a>
+        <a href="terms.html">Website Terms</a>
+      </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
