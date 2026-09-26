@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="Confirmation that a TossLess account email address has been verified.">
     <meta name="theme-color" content="#24443a">
-    <title>Email confirmed | TossLess</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+    <title>Email link | TossLess</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
@@ -19,16 +22,54 @@
 
     <main id="main-content">
       <p class="section-label">TossLess</p>
-      <h1>Email confirmed</h1>
-      <p>Your TossLess email address has been confirmed.</p>
-      <p>Return to TossLess and sign in with your household email address and password.</p>
-      <p>If you did not create a TossLess account, you can ignore this page. For help, visit <a href="support.html">TossLess Support</a>.</p>
+      <h1 id="status-title">Checking email link</h1>
+      <p id="status-message" role="status" aria-live="polite">Checking the result of your TossLess email link.</p>
+      <p id="next-step"></p>
+      <p>For help, visit <a href="support.html">TossLess Support</a>.</p>
     </main>
 
     <footer class="site-footer">
       <span>© <span id="year"></span> Engine Builder LLC. All rights reserved.</span>
       <div><a href="support.html">TossLess Support</a><a href="privacy.html">TossLess Privacy</a><a href="terms.html">TossLess Terms</a><a href="../index.html">Company</a></div>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+      const query = new URLSearchParams(window.location.search);
+      const fragment = new URLSearchParams(window.location.hash.slice(1));
+      const parameter = (name) => fragment.get(name) || query.get(name);
+      const type = parameter('type');
+      const hasError = Boolean(parameter('error') || parameter('error_code') || parameter('error_description'));
+      const hasSession = Boolean(parameter('access_token') && parameter('refresh_token'));
+      const title = document.getElementById('status-title');
+      const message = document.getElementById('status-message');
+      const nextStep = document.getElementById('next-step');
+
+      // Auth errors and recovery links must never be presented as confirmed email.
+      if (hasError) {
+        title.textContent = 'Email link unavailable';
+        message.textContent = 'This email link is invalid or has expired.';
+        nextStep.textContent = 'Return to TossLess and request a new email.';
+      } else if (type === 'recovery') {
+        title.textContent = 'Password reset link opened here';
+        message.textContent = 'This password-reset link opened the email confirmation page.';
+        nextStep.textContent = 'Return to TossLess and request a new password-reset email from the app.';
+      } else if ((type === 'signup' || type === 'email') && hasSession) {
+        title.textContent = 'Email confirmed';
+        message.textContent = 'Your TossLess email address has been confirmed.';
+        nextStep.textContent = 'Return to TossLess and sign in with your household email address and password.';
+      } else if (type === 'invite' && hasSession) {
+        title.textContent = 'Invitation accepted';
+        message.textContent = 'Your TossLess invitation link was accepted.';
+        nextStep.textContent = 'Return to TossLess to continue setting up your account.';
+      } else {
+        title.textContent = 'Email link unavailable';
+        message.textContent = 'This page cannot confirm an email address without a valid confirmation result.';
+        nextStep.textContent = 'Return to TossLess and request a new confirmation email if needed.';
+      }
+
+      // Remove one-time Auth credentials and errors from browser history.
+      history.replaceState(null, '', window.location.pathname);
+      document.title = `${title.textContent} | TossLess`;
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
