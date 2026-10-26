@@ -11,7 +11,7 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Engine Builder LLC home">
+      <a class="brand" href="/">
         <span class="brand-mark" aria-hidden="true">E</span>
         <span>Engine Builder LLC</span>
       </a>
@@ -19,10 +19,11 @@
         <a href="#about">About</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
+        <a href="tossless/support.html">Support</a>
       </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
         <div class="eyebrow">Independent software company</div>
         <h1 id="hero-title">Practical software,<br>thoughtfully made.</h1>
@@ -54,7 +55,7 @@
             <p>TossLess helps home cooks keep track of groceries, choose what to use, and make the next shopping trip clearer. It is being developed for iPhone.</p>
             <p class="product-links"><a href="tossless/support.html">Support</a><a href="tossless/privacy.html">Privacy</a><a href="tossless/terms.html">Terms</a></p>
           </div>
-          <div class="product-details" aria-label="TossLess capabilities">
+          <div class="product-details" role="group" aria-label="TossLess capabilities">
             <div>
               <span class="detail-number">01</span>
               <p><strong>Capture groceries simply</strong> with options such as scanning, photos, receipts, pasted text, or manual entry.</p>
@@ -99,7 +100,7 @@
         </div>
         <div>
           <p>For company or product inquiries, email us at:</p>
-          <a class="email-link" href="mailto:tosslesssupport@enginebuilderllc.com">tosslesssupport@enginebuilderllc.com</a>
+          <a class="email-link" href="mailto:tosslesssupport@enginebuilderllc.com">tosslesssupport@<wbr>enginebuilderllc.com</a>
           <p class="contact-note">Please do not send passwords, account information, or other sensitive information by email.</p>
         </div>
       </section>
@@ -107,13 +108,15 @@
 
     <footer class="site-footer">
       <span>© <span id="year"></span> Engine Builder LLC. All rights reserved.</span>
-      <div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Company</a>
         <a href="privacy.html">Website Privacy</a>
-        <a href="tossless/privacy.html">TossLess Privacy</a>
-        <a href="tossless/support.html">TossLess Support</a>
-        <a href="tossless/terms.html">TossLess Terms</a>
         <a href="terms.html">Website Terms</a>
-      </div>
+        <a href="tossless/privacy.html">TossLess Privacy</a>
+        <a href="tossless/terms.html">TossLess Terms</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="tossless/support.html">TossLess Support</a>
+      </nav>
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>

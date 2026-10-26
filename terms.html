@@ -9,8 +9,10 @@
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header"><a class="brand" href="/" aria-label="Engine Builder LLC home"><span class="brand-mark" aria-hidden="true">E</span><span>Engine Builder LLC</span></a></header>
-    <main id="main-content">
+    <header class="site-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">E</span><span>Engine Builder LLC</span></a>
+      <nav aria-label="Main navigation"><a href="index.html#about">About</a><a href="index.html#products">Products</a><a href="index.html#contact">Contact</a><a href="tossless/support.html">Support</a></nav>
+    </header>
+    <main id="main-content" tabindex="-1">
       <p class="section-label">Engine Builder LLC</p>
       <h1>Website Terms</h1>
       <p class="effective-date">Effective August 21, 2026</p>
@@ -26,7 +28,18 @@
       <h2>Contact</h2>
       <p>Questions about these terms can be sent to <a href="mailto:tosslesssupport@enginebuilderllc.com">tosslesssupport@enginebuilderllc.com</a>.</p>
     </main>
-    <footer class="site-footer"><span>© <span id="year"></span> Engine Builder LLC. All rights reserved.</span><div><a href="privacy.html">Website Privacy</a><a href="terms.html">Website Terms</a></div></footer>
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Engine Builder LLC. All rights reserved.</span>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Company</a>
+        <a href="privacy.html">Website Privacy</a>
+        <a href="terms.html">Website Terms</a>
+        <a href="tossless/privacy.html">TossLess Privacy</a>
+        <a href="tossless/terms.html">TossLess Terms</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="tossless/support.html">TossLess Support</a>
+      </nav>
+    </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>
 </html>
